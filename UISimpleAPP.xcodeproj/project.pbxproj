@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		090D2FA0264EFAFE0058E04C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D2F9F264EFAFE0058E04C /* AppDelegate.swift */; };
 		090D2FA2264EFAFE0058E04C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D2FA1264EFAFE0058E04C /* SceneDelegate.swift */; };
-		090D2FA4264EFAFE0058E04C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D2FA3264EFAFE0058E04C /* ViewController.swift */; };
+		090D2FA4264EFAFE0058E04C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D2FA3264EFAFE0058E04C /* MainViewController.swift */; };
 		090D2FA7264EFAFE0058E04C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 090D2FA5264EFAFE0058E04C /* Main.storyboard */; };
 		090D2FA9264EFAFF0058E04C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 090D2FA8264EFAFF0058E04C /* Assets.xcassets */; };
 		090D2FAC264EFAFF0058E04C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 090D2FAA264EFAFF0058E04C /* LaunchScreen.storyboard */; };
+		09EE72B3265033BB00AA3880 /* PulsatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE72B2265033BB00AA3880 /* PulsatingButton.swift */; };
+		09EE72B62650357400AA3880 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE72B52650357400AA3880 /* UIView.swift */; };
+		09EE72B826503AB300AA3880 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE72B726503AB300AA3880 /* CountriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		090D2F9C264EFAFE0058E04C /* UISimpleAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISimpleAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		090D2F9F264EFAFE0058E04C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		090D2FA1264EFAFE0058E04C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		090D2FA3264EFAFE0058E04C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		090D2FA3264EFAFE0058E04C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		090D2FA6264EFAFE0058E04C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		090D2FA8264EFAFF0058E04C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		090D2FAB264EFAFF0058E04C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		090D2FAD264EFAFF0058E04C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09EE72B2265033BB00AA3880 /* PulsatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsatingButton.swift; sourceTree = "<group>"; };
+		09EE72B52650357400AA3880 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		09EE72B726503AB300AA3880 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,26 @@
 		090D2F9E264EFAFE0058E04C /* UISimpleAPP */ = {
 			isa = PBXGroup;
 			children = (
-				090D2F9F264EFAFE0058E04C /* AppDelegate.swift */,
-				090D2FA1264EFAFE0058E04C /* SceneDelegate.swift */,
-				090D2FA3264EFAFE0058E04C /* ViewController.swift */,
+				090D2FA3264EFAFE0058E04C /* MainViewController.swift */,
+				09EE72B726503AB300AA3880 /* CountriesViewController.swift */,
+				09EE72B42650355400AA3880 /* Common files */,
 				090D2FA5264EFAFE0058E04C /* Main.storyboard */,
 				090D2FA8264EFAFF0058E04C /* Assets.xcassets */,
 				090D2FAA264EFAFF0058E04C /* LaunchScreen.storyboard */,
 				090D2FAD264EFAFF0058E04C /* Info.plist */,
+				090D2F9F264EFAFE0058E04C /* AppDelegate.swift */,
+				090D2FA1264EFAFE0058E04C /* SceneDelegate.swift */,
 			);
 			path = UISimpleAPP;
+			sourceTree = "<group>";
+		};
+		09EE72B42650355400AA3880 /* Common files */ = {
+			isa = PBXGroup;
+			children = (
+				09EE72B2265033BB00AA3880 /* PulsatingButton.swift */,
+				09EE72B52650357400AA3880 /* UIView.swift */,
+			);
+			path = "Common files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				090D2FA4264EFAFE0058E04C /* ViewController.swift in Sources */,
+				09EE72B62650357400AA3880 /* UIView.swift in Sources */,
+				090D2FA4264EFAFE0058E04C /* MainViewController.swift in Sources */,
 				090D2FA0264EFAFE0058E04C /* AppDelegate.swift in Sources */,
 				090D2FA2264EFAFE0058E04C /* SceneDelegate.swift in Sources */,
+				09EE72B3265033BB00AA3880 /* PulsatingButton.swift in Sources */,
+				09EE72B826503AB300AA3880 /* CountriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
