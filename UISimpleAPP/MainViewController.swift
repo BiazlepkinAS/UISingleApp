@@ -6,13 +6,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
-        
-        
-        
-        
+    
         let backGroundImage: UIImageView = {
             let image = UIImageView()
-            image.image = UIImage(named: "")
+            image.image = UIImage(named: "backGround")
             return image
         }()
         view.addSubview(backGroundImage)
@@ -24,18 +21,39 @@ class MainViewController: UIViewController {
         button.center = self.view.center
         view.addSubview(button)
         button.addTarget(self, action: #selector(self.connection(sender:)), for: .touchUpInside)
-        //        button.setImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControl.State#>)
-        button.pulse()
+        if button.isEnabled == true {
+            button.pulse()
+        } else {
+        print("no")
+        }
         
+//        button.pulse()
+     
+        
+        let menuButton: UIButton = {
+           let button = UIButton()
+            button.backgroundColor = .white
+            button.addTarget(self, action: #selector(aboutView), for: .touchUpInside)
+            button.isEnabled = true
+            button.layer.cornerRadius = 5
+            return button
+        }()
+        view.addSubview(menuButton)
+        menuButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 220, paddingLeft: 20, paddingBottom: 0, paddingRight: 0, width: button.frame.size.width / 8, height: button.frame.size.height / 8)
         
     }
     
     @objc func connection(sender: UIButton) {
-        
+    
         
         print("It's OK")
         self.animateButton(buttToAnimate: sender as! PulsatingButton)
     }
+    @objc func aboutView() {
+        navigationController?.present(CountriesViewController(), animated: true, completion: nil)
+    }
+    
+    
     fileprivate func animateButton(buttToAnimate: PulsatingButton) {
         PulsatingButton.animate(withDuration: 1.15, delay: 0, usingSpringWithDamping: 0.2,
                                 initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {

@@ -2,6 +2,8 @@
 import UIKit
 
 class PulsatingButton: UIButton {
+    
+    
     let pulseLayer: CAShapeLayer = {
         let shape = CAShapeLayer()
         shape.strokeColor = UIColor.clear.cgColor
@@ -35,7 +37,7 @@ class PulsatingButton: UIButton {
         
         backgroundLayer.path = circularPath.cgPath
         backgroundLayer.lineWidth = 10
-        backgroundLayer.fillColor = UIColor.blue.cgColor
+        backgroundLayer.fillColor = #colorLiteral(red: 0.5471689701, green: 0.4543625712, blue: 0.7278440595, alpha: 1)
         backgroundLayer.lineCap = .round
         self.layer.addSublayer(backgroundLayer)
     }
@@ -49,5 +51,6 @@ class PulsatingButton: UIButton {
         animation.repeatCount = .infinity
         pulseLayer.add(animation, forKey: "pulsing")
     }
+    
     
 }
