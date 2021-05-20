@@ -30,23 +30,25 @@ class MainViewController: UIViewController {
             button.isEnabled = true
             button.layer.cornerRadius = 5
             button.setImage(UIImage(named: ""), for: .normal)
+            button.setTitle("!", for: .normal)
             return button
         }()
         view.addSubview(menuButton)
         menuButton.anchor(top: button.bottomAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 10, width: button.frame.size.width / 6, height: button.frame.size.height / 6)
         
         let countryLabel: UILabel = {
-           let label = UILabel()
+            let label = UILabel()
             label.font = UIFont.systemFont(ofSize: 20)
             label.text = ""
             label.backgroundColor = .white
-            
+            label.layer.cornerRadius = 15
             return label
         }()
         view.addSubview(countryLabel)
+        
         countryLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: view.frame.size.width / 2, paddingLeft: view.frame.size.width / 4, paddingBottom: 0, paddingRight: 0, width: view.frame.size.width / 2, height: view.frame.size.width / 8)
     }
-
+    
     
     @objc func connection(sender: UIButton) {
         
