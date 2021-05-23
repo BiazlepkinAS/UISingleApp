@@ -3,10 +3,19 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    private lazy var countryPickerModel:[countryPickerModels] = {
+        var models: [countryPickerModels] = []
+        for (code, value) in CountryService.countryCell {
+            models.append(.init(code: code, title: value.0, icon: value.1))
+        }
+        return models
+    }()
+    var countryPicker = UIPickerView()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
         navigationController?.navigationBar.isHidden = true
+        setup()
         
         let backGroundImage: UIImageView = {
             let image = UIImageView()
@@ -22,6 +31,7 @@ class MainViewController: UIViewController {
         button.center = self.view.center
         view.addSubview(button)
         button.addTarget(self, action: #selector(self.connection(sender:)), for: .touchUpInside)
+        button.pulse()
         
         let menuButton: UIButton = {
             let button = UIButton()
@@ -45,11 +55,19 @@ class MainViewController: UIViewController {
             return label
         }()
         view.addSubview(countryLabel)
-        
         countryLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: view.frame.size.width / 2, paddingLeft: view.frame.size.width / 4, paddingBottom: 0, paddingRight: 0, width: view.frame.size.width / 2, height: view.frame.size.width / 8)
+        
+        let coutryPicker: UIPickerView = {
+            let picker = UIPickerView()
+            picker.clipsToBounds = true
+            return picker
+        }()
+        view.addSubview(coutryPicker)
+        
+        coutryPicker.anchor(top: view.topAnchor, left: nil, bottom: button.topAnchor, right: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 20, paddingRight: 0, width: view.frame.size.width / 2, height: view.frame.size.height / 10)
+        coutryPicker.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
     }
-    
-    
     @objc func connection(sender: UIButton) {
         
         print("It's OK")
@@ -65,5 +83,44 @@ class MainViewController: UIViewController {
                                 }) { (_)in
             print("ok")
         }
+    }
+}
+struct countryPickerModels {
+    let code: String
+    let title: String
+    let icon: UIImage
+}
+extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countryPickerModel.count
+    }
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 40.0
+    }
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return  130.0
+    }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let model = countryPickerModel[row]
+        return CountryView.create(icon: model.icon, title: model.title)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        if #available(iOS 14.0, *) {
+//            countryPicker.subviews[0].backgroundColor = .clear
+//        }
+    }
+}
+private extension MainViewController {
+    func setup() {
+        
+        //        if #available(iOS 14.0, *) {
+        //            countryPicker.subviews[0].backgroundColor = .clear
+        //        }
+        
     }
 }

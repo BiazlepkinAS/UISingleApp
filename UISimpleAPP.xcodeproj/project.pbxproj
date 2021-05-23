@@ -16,7 +16,9 @@
 		09EE72B3265033BB00AA3880 /* PulsatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE72B2265033BB00AA3880 /* PulsatingButton.swift */; };
 		09EE72B62650357400AA3880 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE72B52650357400AA3880 /* UIView.swift */; };
 		09EE72B826503AB300AA3880 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE72B726503AB300AA3880 /* CountriesViewController.swift */; };
-		09EE72BB265193D300AA3880 /* CountryVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE72BA265193D300AA3880 /* CountryVCModel.swift */; };
+		09EE72BB265193D300AA3880 /* CountriesVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE72BA265193D300AA3880 /* CountriesVCCell.swift */; };
+		09EE72BD265AD65F00AA3880 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE72BC265AD65F00AA3880 /* CountryService.swift */; };
+		09EE72BF265AD8B100AA3880 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE72BE265AD8B100AA3880 /* CountryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +33,9 @@
 		09EE72B2265033BB00AA3880 /* PulsatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsatingButton.swift; sourceTree = "<group>"; };
 		09EE72B52650357400AA3880 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		09EE72B726503AB300AA3880 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
-		09EE72BA265193D300AA3880 /* CountryVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryVCModel.swift; sourceTree = "<group>"; };
+		09EE72BA265193D300AA3880 /* CountriesVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesVCCell.swift; sourceTree = "<group>"; };
+		09EE72BC265AD65F00AA3880 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
+		09EE72BE265AD8B100AA3880 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +71,9 @@
 				090D2FA3264EFAFE0058E04C /* MainViewController.swift */,
 				09EE72B9265193A500AA3880 /* TableViewController */,
 				09EE72B42650355400AA3880 /* Common files */,
-				090D2FA5264EFAFE0058E04C /* Main.storyboard */,
+				09EE72C0265AE80A00AA3880 /* PickerView */,
 				090D2FA8264EFAFF0058E04C /* Assets.xcassets */,
+				090D2FA5264EFAFE0058E04C /* Main.storyboard */,
 				090D2FAA264EFAFF0058E04C /* LaunchScreen.storyboard */,
 				090D2FAD264EFAFF0058E04C /* Info.plist */,
 				090D2F9F264EFAFE0058E04C /* AppDelegate.swift */,
@@ -90,9 +95,18 @@
 			isa = PBXGroup;
 			children = (
 				09EE72B726503AB300AA3880 /* CountriesViewController.swift */,
-				09EE72BA265193D300AA3880 /* CountryVCModel.swift */,
+				09EE72BA265193D300AA3880 /* CountriesVCCell.swift */,
 			);
 			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		09EE72C0265AE80A00AA3880 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				09EE72BC265AD65F00AA3880 /* CountryService.swift */,
+				09EE72BE265AD8B100AA3880 /* CountryView.swift */,
+			);
+			path = PickerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,10 +182,12 @@
 				09EE72B62650357400AA3880 /* UIView.swift in Sources */,
 				090D2FA4264EFAFE0058E04C /* MainViewController.swift in Sources */,
 				090D2FA0264EFAFE0058E04C /* AppDelegate.swift in Sources */,
+				09EE72BF265AD8B100AA3880 /* CountryView.swift in Sources */,
 				090D2FA2264EFAFE0058E04C /* SceneDelegate.swift in Sources */,
+				09EE72BD265AD65F00AA3880 /* CountryService.swift in Sources */,
 				09EE72B3265033BB00AA3880 /* PulsatingButton.swift in Sources */,
 				09EE72B826503AB300AA3880 /* CountriesViewController.swift in Sources */,
-				09EE72BB265193D300AA3880 /* CountryVCModel.swift in Sources */,
+				09EE72BB265193D300AA3880 /* CountriesVCCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
